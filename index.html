@@ -144,7 +144,115 @@ form label{display:block;font-weight:600;margin-top:12px}
                 font-size: 16px;
             }
         }
+body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #8099ad; /* same blue tone */
+        color: #000;
+    }
 
+    .contact-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 150px;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .contact-info {
+        width: 35%;
+        line-height: 1.8;
+    }
+
+    .contact-info h2 {
+        letter-spacing: 3px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .contact-info h2::before {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 2px;
+        background-color: #000;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .contact-info a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        margin-right: 15px;
+        font-size: 20px;
+        color: #000;
+        text-decoration: none;
+    }
+
+    .contact-form {
+        width: 55%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #000;
+        background-color: transparent;
+        color: #000;
+        font-size: 15px;
+        font-family: inherit;
+    }
+
+    .contact-form textarea {
+        height: 140px;
+        resize: none;
+    }
+
+    .contact-form button {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 10px 35px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .contact-form button:hover {
+        background-color: #222;
+    }
+
+    .footer {
+        text-align: left;
+        padding: 20px 150px;
+        font-size: 14px;
+    }
+
+    .footer a {
+        background-color: #000;
+        color: #fff;
+        padding: 8px 18px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer a:hover {
+        background-color: #333;
+    }
 </style>
 </head>
 <body>
@@ -212,4 +320,44 @@ form label{display:block;font-weight:600;margin-top:12px}
 </div>
 
 </div>
+    <body>
+
+<section class="contact-section">
+    <div class="contact-info">
+        <h2>Contact</h2>
+        <p>980 North Federal Highway<br>
+        Suite 110<br>
+        Boca Raton, Florida 33432</p>
+        <p>Tel: 561-991-0374</p>
+        <p><a href="mailto:info@support@pixelplace.cloud">support@pixelplace.cloud</a></p>
+
+        <div class="social-icons">
+            <a href="#" target="_blank">in</a>
+            <a href="#" target="_blank">f</a>
+        </div>
+    </div>
+
+    <form class="contact-form" action="#" method="post">
+        <label>Your Name</label>
+        <input type="text" name="name" required>
+
+        <label>Your Email *</label>
+        <input type="email" name="email" required>
+
+        <label>Your Subject</label>
+        <input type="text" name="subject">
+
+        <label>Message *</label>
+        <textarea name="message" placeholder="bonjour! Let us know how we may serve you." required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<footer class="footer">
+    <p>© 2025 Pixel Place LLC</p>
+    <a href="#">Privacy Policy</a>
+</footer>
+
+</body>
 </html>
