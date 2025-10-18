@@ -253,6 +253,83 @@ body {
     .footer a:hover {
         background-color: #333;
     }
+       body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #ffffff;
+        color: #000;
+    }
+
+    .leadership-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 80px 150px;
+        background-color: #ffffff;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .leadership-text {
+        width: 45%;
+    }
+
+    .leadership-text h2 {
+        font-size: 32px;
+        text-transform: uppercase;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+    }
+
+    .leadership-text p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .leadership-images {
+        width: 45%;
+        background-color: #8099ad;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0;
+        border-radius: 6px;
+    }
+
+    .leader {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .leader img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .leader p {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+        .leadership-section {
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+
+        .leadership-text, .leadership-images {
+            width: 100%;
+        }
+
+        .leadership-images {
+            margin-top: 40px;
+        }
+    }
 </style>
 </head>
 <body>
@@ -321,7 +398,35 @@ body {
 
 </div>
     <body>
+<div>
+    <body>
 
+<section class="leadership-section">
+    <div class="leadership-text">
+        <h2>Visionary Leadership: A Message from Our Team</h2>
+        <p>At Pixel Place, we’re dedicated to helping businesses build a stronger, more secure future. We take the time to thoroughly understand your business goals, challenges, and security needs, ensuring that our solutions not only meet but exceed your expectations. Our passion lies in empowering businesses with technology that drives success, while maintaining the highest standards of security and performance.
+
+Technology strategy is becoming an increasingly vital part of a company’s long-term success. The ability to forecast needs and design systems for scalability can be a key differentiator in today’s fast-paced world. At Pixel Place, we work closely with clients to assess their business needs within their unique industry context, ensuring technology solutions that enhance capabilities and make teams more efficient as they grow.
+
+Our focus on the relationship between technology and people helps us drive optimum workforce performance. This is more important than ever as teams and clients are often collaborating from different locations. Through identity management, Endpoint Management, Security, and Compliance, we provide a holistic platform that enables your team to operate more seamlessly and securely.</p>
+    </div>
+
+   <div class="leadership-images">
+    <div class="leader">
+        <img src="/images/221.png" alt="Jasmine Williams, Chief Executive Officer">
+        <p><strong>Jasmine Williams</strong><br>Chief Executive Officer</p>
+    </div>
+    <div class="leader">
+        <img src="/images/220.png" alt="Darnell Miller, Director of Information Technology, Penetration Tester, Developer">
+        <p><strong>Darnell Miller</strong><br>Director of Information Technology | Penetration Tester | Developer</p>
+    </div>
+</div>
+
+</section>
+
+</body>
+</html>
+</div>
 <section class="contact-section">
     <div class="contact-info">
         <h2>Contact</h2>
