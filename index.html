@@ -380,6 +380,42 @@ body {
       font-size: 0.9em;
       line-height: 1.4;
     }
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 150px;
+    max-width: 1400px;
+    margin: auto;
+    background-color: #48a8e8; /* ✅ This removes the white background */
+    color: #fff; /* Make text readable */
+}
+
+.contact-info a,
+.social-icons a {
+    color: #fff; /* Make links visible on blue background */
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid #fff; /* White borders for visibility */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    color: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #e0e0e0;
+}
+
+.contact-form button {
+    background-color: #000;
+    color: #fff;
+}
+
+.contact-form button:hover {
+    background-color: #222;
+}
+
 </style>
 </head>
 <body>
