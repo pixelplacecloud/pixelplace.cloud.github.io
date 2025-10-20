@@ -1,615 +1,401 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content="Pixel Place LLC — Remote Help Desk, SharePoint Services, and Penetration Testing. Secure, reliable, and flexible IT for small and mid-sized businesses." />
-<title>Pixel Place</title>
-<style>
-:root{--brand:#007bff;--dark:#0A0E3F;--muted:#6b7280;--card:#ffffff;--glass:rgba(255,255,255,0.06)}
-*{box-sizing:border-box}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;background:linear-gradient(180deg,#f7fbff, #ffffff);color:#0b1220}
-header{background:#fff;border-bottom:1px solid #eef2f7;padding:20px 28px;position:sticky;top:0;z-index:50}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:44px;height:44px;border-radius:10px;background:var(--brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-nav{margin-right:auto;display:flex;gap:18px;align-items:center}
-a{color:inherit;text-decoration:none}
-.cta{background:var(--brand);color:#fff;padding:10px 14px;border-radius:8px;font-weight:600}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Pixel Place LLC — Remote Help Desk, SharePoint Services, and Penetration Testing. Secure, reliable, and flexible IT for small and mid-sized businesses." />
+  <title>Pixel Place — SharePoint · Web App Pentesting · Front-End</title>
 
+  <!-- Google Font (Inter similar) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-.hero{padding:56px 0;display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
-.hero-grid{display:grid;grid-template-columns:1fr;gap:24px}
-.eyebrow{color:var(--muted);font-weight:600}
-h1{font-size:34px;margin:8px 0 12px}
-p.lead{color:var(--muted);max-width:720px}
-.buttons{display:flex;gap:12px;margin-top:12px}
-.btn{padding:12px 16px;border-radius:8px;font-weight:600}
-.ghost{border:1px solid #e6eefc;background:#fff}
-
-
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(18,52,86,0.06);border:1px solid #f1f5f9}
-.service-title{font-weight:700;margin-top:8px}
-.muted{color:var(--muted)}
-
-
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.price{font-size:20px;font-weight:700}
-
-
-.two-col{display:grid;grid-template-columns:1fr 380px;gap:28px}
-
-
-footer{margin-top:48px;padding:36px 0;background:#0b1220;color:#fff}
-footer .container{display:flex;gap:24px;align-items:flex-start}
-footer a{color:#cbd5e1}
-
-
-/* responsive */
-@media (max-width:900px){.grid-3{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.hero{padding:36px 0}h1{font-size:28px}}
-
-
-/* contact form styles */
-form input, form textarea, .select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:8px}
-form label{display:block;font-weight:600;margin-top:12px}
-.muted-sm{color:#94a3b8;font-size:14px}
-
-
-/* small utilities */
-.center{text-align:center}
-.sm{font-size:13px}
-.tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(0,123,255,0.08);color:var(--brand);font-weight:700}
-.logo-png {
-    max-height: 100px;   /* Logo will never exceed 100px in height */
-    width: auto;
-}
-/* Logo container */
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Set the size of the logo */
-.logo-png {
-    max-height: 100px;    /* Logo will never exceed 100px in height */
-    width: auto;          /* Maintain aspect ratio */
-}
- /* Reset styles for the page */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        /* Video background */
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Makes the video cover the entire screen */
-            z-index: -1; /* Place video behind all other elements */
-        }
-
-        /* Container for the content on top of the video */
-        .content-container {
-            position: relative;
-            z-index: 1; /* Ensure the content is above the video */
-            color: #fff; /* White text on top of the video */
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Styles for header and text */
-        header {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            padding: 20px;
-        }
-        
-        h1 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-top: 20px;
-        }
-
-        .lead {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        .btn {
-            background: #007bff;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .cta {
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            .lead {
-                font-size: 16px;
-            }
-        }
-body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background-color: #8099ad; /* same blue tone */
-        color: #000;
+  <style>
+    :root{
+      --brand:#007bff;
+      --nav:#071033;
+      --muted:#6b7280;
+      --bg-grad-start:#f7fbff;
+      --bg-grad-end:#ffffff;
+      --card:#ffffff;
+      --glass:rgba(255,255,255,0.06);
+      --maxwidth:1200px;
+    }
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height:1.55;
+      color:#07112a;
+      background: linear-gradient(180deg,var(--bg-grad-start),var(--bg-grad-end));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
     }
 
-    .contact-section {
-        display: flex;
-        justify-content: space-between;
-        padding: 80px 150px;
-        max-width: 1400px;
-        margin: auto;
+    /* Layout container */
+    .wrap{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:80;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(10,14,35,0.06);
+    }
+    .nav-inner{display:flex;align-items:center;gap:18px;padding:16px 10px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--brand),#0056d6);color:#fff;font-weight:800;font-size:18px;
+      flex-shrink:0;
+    }
+    .brand h3{font-size:16px;margin:0;line-height:1;color:#07112a}
+    nav{margin-left:auto;display:flex;gap:18px;align-items:center}
+    nav a{color:#07112a;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
+    nav a:hover{background:rgba(7,17,51,0.04)}
+    .cta{background:var(--brand);color:#fff;padding:9px 14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,123,255,0.12)}
+    .hamburger{display:none;border:0;background:transparent;font-size:20px}
+
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;border-radius:14px;margin:28px 0;padding:48px;
+      background:linear-gradient(180deg,rgba(7,17,51,0.02),rgba(7,17,51,0.01));
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
+      box-shadow:0 8px 40px rgba(9,18,48,0.06);
     }
 
-    .contact-info {
-        width: 35%;
-        line-height: 1.8;
+    /* optional video background inside hero */
+    .hero .video-wrap{
+      position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.10;filter:grayscale(20%) blur(1px)
+    }
+    .hero .video-wrap video{width:100%;height:100%;object-fit:cover}
+
+    .hero-content{position:relative;z-index:2;padding-right:12px}
+    .eyebrow{display:inline-block;background:rgba(0,123,255,0.08);color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+    h1{font-size:34px;margin:16px 0 8px;line-height:1.05;color:#07112a}
+    p.lead{color:var(--muted);max-width:60ch;margin-bottom:14px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;font-weight:700;text-decoration:none}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 30px rgba(0,123,255,0.12)}
+    .btn-ghost{background:#fff;border:1px solid rgba(7,17,51,0.06);color:#07112a}
+
+    /* card list on right */
+    .hero-cards{display:flex;flex-direction:column;gap:12px;position:relative;z-index:2}
+    .small-card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 8px 30px rgba(9,18,48,0.06);border:1px solid rgba(10,14,35,0.04)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(0,123,255,0.06);color:var(--brand);font-weight:800;font-size:13px}
+
+    /* Services grid */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .service{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(9,18,48,0.05);border:1px solid rgba(10,14,35,0.04)}
+    .service h4{margin-top:10px;font-size:16px}
+    .service p{color:var(--muted);font-size:14px;margin-top:8px}
+
+    /* pricing-ish cards */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .price-card{background:linear-gradient(180deg,#fff,#fbfdff);padding:20px;border-radius:12px;border:1px solid rgba(10,14,35,0.04);box-shadow:0 12px 30px rgba(9,18,48,0.04)}
+    .price{font-size:22px;font-weight:800;margin:6px 0}
+    .price small{color:var(--muted);font-weight:500}
+
+    /* leadership */
+    .leadership{display:flex;gap:22px;align-items:stretch;margin-top:34px;background:linear-gradient(90deg,#f8fbff,#ffffff);padding:26px;border-radius:12px}
+    .leadership .text{flex:1}
+    .leaders{width:360px;background:#f1f6ff;border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center}
+    .leader img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 12px 30px rgba(7,17,51,0.05)}
+
+    /* testimonials */
+    h2.section-title{font-size:22px;margin:28px 0 12px}
+    .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .testimonial{background:#07112a;color:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(7,17,51,0.15)}
+    .testimonial .name{font-weight:800}
+    .testimonial .stars{color:#ffd54a;margin:8px 0}
+
+    /* contact */
+    .contact-section{display:flex;gap:28px;margin-top:28px;padding:28px;background:linear-gradient(180deg,#e9f4ff, #fff);border-radius:12px;align-items:flex-start}
+    .contact-info{width:36%}
+    .contact-info h3{font-size:16px;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase}
+    .contact-info p{color:var(--muted);line-height:1.6}
+    .contact-form{flex:1}
+    .contact-form label{display:block;font-weight:700;margin-top:12px}
+    .contact-form input,.contact-form textarea{width:100%;padding:12px;margin-top:8px;border-radius:10px;border:1px solid rgba(7,17,51,0.06);font-family:inherit}
+    .contact-form button{margin-top:12px;padding:12px 20px;border-radius:10px;border:0;background:#07112a;color:#fff;font-weight:800;cursor:pointer}
+
+    /* footer */
+    footer{margin-top:36px;padding:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:1100px){
+      .hero{grid-template-columns:1fr; padding:28px}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .pricing{grid-template-columns:1fr 1fr}
+      .leadership{flex-direction:column}
+      .leaders{width:100%}
+    }
+    @media (max-width:720px){
+      nav{display:none}
+      .hamburger{display:block;margin-left:auto}
+      .grid-3{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .testimonial{padding:14px}
+      .contact-section{flex-direction:column}
     }
 
-    .contact-info h2 {
-        letter-spacing: 3px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-
-    .contact-info h2::before {
-        content: "";
-        display: inline-block;
-        width: 40px;
-        height: 2px;
-        background-color: #000;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-
-    .contact-info a {
-        color: #000;
-        text-decoration: none;
-    }
-
-    .contact-info a:hover {
-        text-decoration: underline;
-    }
-
-    .social-icons {
-        margin-top: 15px;
-    }
-
-    .social-icons a {
-        margin-right: 15px;
-        font-size: 20px;
-        color: #000;
-        text-decoration: none;
-    }
-
-    .contact-form {
-        width: 55%;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        padding: 12px;
-        margin-top: 8px;
-        margin-bottom: 20px;
-        border: 1px solid #000;
-        background-color: transparent;
-        color: #000;
-        font-size: 15px;
-        font-family: inherit;
-    }
-
-    .contact-form textarea {
-        height: 140px;
-        resize: none;
-    }
-
-    .contact-form button {
-        background-color: #000;
-        color: #fff;
-        border: none;
-        padding: 10px 35px;
-        font-size: 15px;
-        cursor: pointer;
-    }
-
-    .contact-form button:hover {
-        background-color: #222;
-    }
-
-    .footer {
-        text-align: left;
-        padding: 20px 150px;
-        font-size: 14px;
-    }
-
-    .footer a {
-        background-color: #000;
-        color: #fff;
-        padding: 8px 18px;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .footer a:hover {
-        background-color: #333;
-    }
-       body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background-color: #ffffff;
-        color: #000;
-    }
-
-    .leadership-section {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 80px 150px;
-        background-color: #007bff;
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .leadership-text {
-        width: 45%;
-    }
-
-    .leadership-text h2 {
-        font-size: 32px;
-        text-transform: uppercase;
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: 1px;
-        margin-bottom: 25px;
-    }
-
-    .leadership-text p {
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 20px;
-    }
-
-    .leadership-images {
-        width: 45%;
-        background-color: #8099ad;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 0;
-        border-radius: 6px;
-    }
-
-    .leader {
-        text-align: center;
-        margin-bottom: 70px;
-    }
-
-    .leader img {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .leader p {
-        margin-top: 12px;
-        font-size: 14px;
-    }
-
-    @media (max-width: 900px) {
-        .leadership-section {
-            flex-direction: column;
-            padding: 40px 20px;
-        }
-
-        .leadership-text, .leadership-images {
-            width: 100%;
-        }
-
-        .leadership-images {
-            margin-top: 40px;
-        }
-    }
-     body {
-      margin: 0;
-      background-color: #000;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    h2 {
-      font-size: 2.5em;
-      font-weight: 900;
-      letter-spacing: 2px;
-      line-height: 1.2;
-      margin-bottom: 40px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .card {
-      background-color: #333;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .name {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 5px;
-    }
-    .stars {
-      color: #facc15;
-      margin-bottom: 5px;
-    }
-    .date {
-      color: #aaa;
-      font-size: 0.8em;
-      margin-bottom: 10px;
-    }
-    .text {
-      color: #ddd;
-      font-size: 0.9em;
-      line-height: 1.4;
-    }
-.contact-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 80px 150px;
-    max-width: 1400px;
-    margin: auto;
-    background-color: #48a8e8; /* ✅ This removes the white background */
-    color: #fff; /* Make text readable */
-}
-
-.contact-info a,
-.social-icons a {
-    color: #fff; /* Make links visible on blue background */
-}
-
-.contact-form input,
-.contact-form textarea {
-    border: 1px solid #fff; /* White borders for visibility */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-    color: #fff;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #e0e0e0;
-}
-
-.contact-form button {
-    background-color: #000;
-    color: #fff;
-}
-
-.contact-form button:hover {
-    background-color: #222;
-}
-
-</style>
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .visually-hidden{position:absolute;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+  </style>
 </head>
 <body>
-<video class="video-background" autoplay muted loop>
-        <source src="/video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-<header>
-<div class="container" style="display:flex;align-items:center">
-<div class="brand">
-<div
-<div class="container" style="display:flex; align-items:center;">
-  <div class="brand">
-    <!-- Updated logo container with video -->
-    <div class="logo">
-      <video autoplay loop muted style="height:100px; width:auto;">
-        <source src="/logo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-</div>
-<div>
-</div>
-</div>
-<nav>
-<a href="#services">Solutions</a>
-<a href="#pricing">Home</a>
-<a href="#about">About</a>
-<a href="#contact" class="cta">Contact Us</a>
-</nav>
-</div>
-</header>
-
-
-<main class="container">
-<section class="hero">
-<div class="hero-grid">
-<div>
-<div class="eyebrow">Innovative • Pristine • Future</div>
-<h1>Front-End Website, SharePoint & Web Application Penetration Testing — Pristine consulting services</h1>
-<p class="lead">20 years of experience serving Goverment, Public Sector, Small Business, Tax Firms, Law Firms, Car Dealerships. Your expert Web & Mobile App Pentesting, SharePoint servicing, and pristine Front-End Websites — all scheduled around your team’s needs.</p>
-<div class="buttons">
-<a class="btn cta" href="#contact">Schedule a Consultation</a>
-<a class="btn ghost" href="#pricing">See Pricing</a>
-</div>
-</div>
-</div>
-
-
-<div class="grid-3">
-    <div class="card">
-        <div class="tag">SharePoint</div>
-        <div class="service-title">Detailed SharePoint Servicing</div>
-        <div class="muted">Intranet website, SharePoint Migration, SharePoint Updates, Changes</div>
-    </div>
-
-    <div class="card">
-        <div class="tag">Web & Mobile App Penetration Testing</div>
-        <div class="service-title">Detailed Penetration Testing</div>
-        <div class="muted">Penetration testing, security audits, vulnerability assessments</div>
-    </div>
-
-    <div class="card">
-        <div class="tag">Website Development</div>
-        <div class="service-title">Custom Website Development</div>
-        <div class="muted">Responsive websites, e-commerce platforms, SEO-friendly websites</div>
-    </div>
-</div>
-
-</div>
-    <body>
-<div>
-    <body>
-
-<section class="leadership-section">
-    <div class="leadership-text">
-        <h2>Visionary Leadership: A Message from Our Team</h2>
-        <p>At Pixel Place, we’re dedicated to helping businesses build a stronger, more secure future. We take the time to thoroughly understand your business goals, challenges, and security needs, ensuring that our solutions not only meet but exceed your expectations. Our passion lies in empowering businesses with technology that drives success, while maintaining the highest standards of security and performance.
-
-Technology strategy is becoming an increasingly vital part of a company’s long-term success. The ability to forecast needs and design systems for scalability can be a key differentiator in today’s fast-paced world. At Pixel Place, we work closely with clients to assess their business needs within their unique industry context, ensuring technology solutions that enhance capabilities and make teams more efficient as they grow.
-
-Our focus on the relationship between technology and people helps us drive optimum workforce performance. This is more important than ever as teams and clients are often collaborating from different locations. Through identity management, Endpoint Management, Security, and Compliance, we provide a holistic platform that enables your team to operate more seamlessly and securely.</p>
-    </div>
-
-   <div class="leadership-images">
-    <div class="leader">
-        <img src="/221.png" alt="Jasmine Williams, Chief Executive Officer">
-        <p><strong>Jasmine Williams</strong><br>Chief Executive Officer</p>
-    </div>
-    <div class="leader">
-        <img src="/220.png" alt="Darnell Miller, Director of Information Technology, Penetration Tester">
-        <p><strong>Darnell Miller</strong><br>Director of Information Technology | Penetration Tester</p>
-    </div>
-</div>
-
-</section>
-
-</body>
-     <h2>WHAT OUR CLIENTS<br>ARE SAYING</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="name">Jordan R</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/17/2025</div>
-      <div class="text">Super quick response time, amazing, thanks ya'll!</div>
-    </div>
-    <div class="card">
-      <div class="name">Mavis K</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/15/2025</div>
-      <div class="text">Thanks a bunch for all the help as always Wayne! Have a good rest of the week (hopefully I won't bother you again aha)</div>
-    </div>
-    <div class="card">
-      <div class="name">Anna W</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/14/2025</div>
-      <div class="text">Everything was great - and perfect response time. Thank you</div>
-    </div>
-    <div class="card">
-      <div class="name">Guy S</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/13/2025</div>
-      <div class="text">Wonderful. Got Adobe and the upgrades installed. Helped me get my bank statements from a VNB share site. Lengthy job & she stayed on to ensure everything...</div>
-    </div>
-    <div class="card">
-      <div class="name">Biff L</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/10/2025</div>
-      <div class="text">Melissa got everything right!</div>
-    </div>
-    <div class="card">
-      <div class="name">Nate M</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/09/2025</div>
-      <div class="text">These two are FANTASTIC!!!!</div>
-    </div>
-    <div class="card">
-      <div class="name">Dewayne B</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/07/2025</div>
-      <div class="text">Cody is helping to put into practice a dream that I pitched!</div>
-    </div>
-    <div class="card">
-      <div class="name">Karri M</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/07/2025</div>
-      <div class="text">Quick resolution to the issue when I needed it</div>
-    </div>
-    <div class="card">
-      <div class="name">Tyler C</div>
-      <div class="stars">★★★★★</div>
-      <div class="date">10/03/2025</div>
-      <div class="text">Thanks for knocking this out!</div>
-    </div>
-</html>
-</div>
-<section class="contact-section">
-    <div class="contact-info">
-        <h2>Contact</h2>
-        <p>980 North Federal Highway<br>
-        Suite 110<br>
-        Boca Raton, Florida 33432</p>
-        <p>Tel: 561-991-0374</p>
-        <p><a href="mailto:info@support@pixelplace.cloud">support@pixelplace.cloud</a></p>
-
-        <div class="social-icons">
-            <a href="#" target="_blank">in</a>
-            <a href="#" target="_blank">f</a>
+  <header>
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- fallback logo: keep video if you have it -->
+          <video autoplay muted loop playsinline style="height:56px; width:auto; display:block;">
+            <source src="/logo.mp4" type="video/mp4">
+            <!-- fallback text -->
+            <span style="color:#fff;font-weight:800;">PP</span>
+          </video>
         </div>
+        <div>
+          <h3>Pixel Place</h3>
+          <div style="font-size:13px;color:var(--muted)">SharePoint · Pentest · Front-End</div>
+        </div>
+      </div>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="main-nav" id="hamburger">☰</button>
+
+      <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#services">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Contact Us</a>
+      </nav>
     </div>
+  </header>
 
-    <form class="contact-form" action="#" method="post">
-        <label>Your Name</label>
-        <input type="text" name="name" required>
+  <main class="wrap" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <!-- optional video overlay -->
+      <div class="video-wrap" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+          <source src="/video.mp4" type="video/mp4">
+        </video>
+      </div>
 
-        <label>Your Email *</label>
-        <input type="email" name="email" required>
+      <div class="hero-content">
+        <span class="eyebrow">Innovative • Pristine • Future</span>
+        <h1 id="hero-heading">Front-End Website, SharePoint & Web Application Penetration Testing — Pristine consulting services</h1>
+        <p class="lead">20 years supporting government, public sector, tax & law firms, dealerships and SMBs. Expert web & mobile app pentesting, SharePoint migration & support, and high-quality front-end builds — scheduled around your team.</p>
 
-        <label>Your Subject</label>
-        <input type="text" name="subject">
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Schedule a Consultation</a>
+          <a class="btn btn-ghost" href="#pricing">See Pricing</a>
+        </div>
 
-        <label>Message *</label>
-        <textarea name="message" placeholder="bonjour! Let us know how we may serve you." required></textarea>
+        <div class="grid-3" style="margin-top:22px;">
+          <div class="service">
+            <div class="tag">SharePoint</div>
+            <h4>Detailed SharePoint Servicing</h4>
+            <p class="muted">Intranets, migrations, site architecture, governance and custom development.</p>
+          </div>
+          <div class="service">
+            <div class="tag">Pentest</div>
+            <h4>Web & Mobile App Pentesting</h4>
+            <p class="muted">OWASP-based tests, API security, auth and session testing, vulnerability reports.</p>
+          </div>
+          <div class="service">
+            <div class="tag">Dev</div>
+            <h4>Front-End & Websites</h4>
+            <p class="muted">Responsive, accessible, SEO-first websites with performance & security in mind.</p>
+          </div>
+        </div>
+      </div>
 
-        <button type="submit">Submit</button>
-    </form>
-</section>
+      <aside class="hero-cards" aria-hidden="false">
+        <div class="small-card">
+          <div style="font-size:13px;color:var(--muted)">Trusted by small & mid businesses</div>
+          <div style="font-weight:800;margin-top:6px">Rapid response & long-term partnership</div>
+        </div>
+        <div class="small-card">
+          <div style="font-size:13px;color:var(--muted)">Clear deliverables</div>
+          <div style="font-weight:800;margin-top:6px">Actionable remediation reports with prioritized fixes</div>
+        </div>
+      </aside>
+    </section>
 
-<footer class="footer">
-    <p>© 2025 Pixel Place LLC</p>
-    <a href="#">Privacy Policy</a>
-</footer>
+    <!-- Pricing / Packages -->
+    <section id="pricing" aria-labelledby="pricing-heading" style="margin-top:18px">
+      <h2 class="section-title" id="pricing-heading">Popular Packages</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><strong>Starter</strong><div class="muted">SharePoint & small site fixes</div></div>
+            <div class="price">$1,499</div>
+          </div>
+          <p class="muted">Good for small teams and single-site projects.</p>
+          <ul style="margin-top:12px;color:var(--muted);line-height:1.6">
+            <li>Site audit & prioritized fixes</li>
+            <li>2 weeks support</li>
+            <li>Basic security review</li>
+          </ul>
+        </div>
 
+        <div class="price-card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><strong>Professional</strong><div class="muted">Pentest + remediation</div></div>
+            <div class="price">$5,499</div>
+          </div>
+          <p class="muted">API & web app pentest, prioritized findings and re-test.</p>
+          <ul style="margin-top:12px;color:var(--muted);line-height:1.6">
+            <li>Full web app test (OWASP)</li>
+            <li>API & auth testing</li>
+            <li>Remediation guidance + re-test</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><strong>Enterprise</strong><div class="muted">Long term support & managed services</div></div>
+            <div class="price">$9,999+</div>
+          </div>
+          <p class="muted">Custom SLA, ongoing security, and development support.</p>
+          <ul style="margin-top:12px;color:var(--muted);line-height:1.6">
+            <li>Dedicated engineer</li>
+            <li>Quarterly pentests</li>
+            <li>Architecture reviews</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="about" style="margin-top:28px">
+      <div class="leadership">
+        <div class="text">
+          <h2 style="font-size:20px;margin-bottom:8px">Visionary Leadership</h2>
+          <p class="muted">At Pixel Place, we design secure and scalable solutions tailored to your business needs. We combine deep technical expertise with an understanding of business workflows to deliver solutions that improve productivity while reducing risk.</p>
+          <p class="muted" style="margin-top:10px">We work closely with clients to plan migrations, assess security posture, and deliver high-quality web experiences that users love.</p>
+        </div>
+
+        <div class="leaders" aria-hidden="false">
+          <div style="text-align:center">
+            <img src="/221.png" alt="Jasmine Williams, CEO">
+            <div style="font-weight:800;margin-top:10px">Jasmine Williams</div>
+            <div class="muted" style="font-size:13px">Chief Executive Officer</div>
+          </div>
+
+          <div style="text-align:center">
+            <img src="/220.png" alt="Darnell Miller, Director">
+            <div style="font-weight:800;margin-top:10px">Darnell Miller</div>
+            <div class="muted" style="font-size:13px">Director of IT · Penetration Tester</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section aria-labelledby="testimonials-heading" style="margin-top:28px">
+      <h2 class="section-title" id="testimonials-heading">What our clients are saying</h2>
+      <div class="test-grid">
+        <div class="testimonial">
+          <div class="name">Jordan R</div>
+          <div class="stars">★★★★★</div>
+          <div class="muted" style="font-size:13px;margin-bottom:6px">10/17/2025</div>
+          <div>Super quick response time, amazing — thanks ya'll!</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="name">Mavis K</div>
+          <div class="stars">★★★★★</div>
+          <div class="muted" style="font-size:13px;margin-bottom:6px">10/15/2025</div>
+          <div>Thanks a bunch for all the help as always — have a good week!</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="name">Anna W</div>
+          <div class="stars">★★★★★</div>
+          <div class="muted" style="font-size:13px;margin-bottom:6px">10/14/2025</div>
+          <div>Perfect response time. Thank you.</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="name">Guy S</div>
+          <div class="stars">★★★★★</div>
+          <div class="muted" style="font-size:13px;margin-bottom:6px">10/13/2025</div>
+          <div>Wonderful support and thorough follow-up.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:28px">
+      <div class="contact-section" role="region" aria-labelledby="contact-heading">
+        <div class="contact-info">
+          <h3 id="contact-heading">Contact</h3>
+          <p>980 North Federal Highway<br>Suite 110<br>Boca Raton, Florida 33432</p>
+          <p>Tel: <a href="tel:+15619910374">561-991-0374</a></p>
+          <p><a href="mailto:support@pixelplace.cloud">support@pixelplace.cloud</a></p>
+
+          <div style="margin-top:12px">
+            <a href="#" style="margin-right:12px;color:var(--brand);text-decoration:none;font-weight:800">LinkedIn</a>
+            <a href="#" style="color:var(--brand);text-decoration:none;font-weight:800">Facebook</a>
+          </div>
+          <p class="muted" style="margin-top:12px;font-size:13px">We normally respond within one business day. For urgent pentest requests, please call the number above.</p>
+        </div>
+
+        <form class="contact-form" action="#" method="post" aria-label="Contact form">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+
+          <label for="email">Your Email *</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required>
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Project or question">
+
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="bonjour! Let us know how we may serve you." required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--brand),#0056d6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">PP</div>
+          <div style="font-weight:700">Pixel Place LLC</div>
+        </div>
+
+        <div style="color:var(--muted)">© 2025 Pixel Place LLC — <a href="#" style="color:var(--muted)">Privacy Policy</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+    hamburger.addEventListener('click', ()=> {
+      const open = nav.style.display === 'flex';
+      nav.style.display = open ? 'none' : 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.right = '18px';
+      nav.style.top = '66px';
+      nav.style.background = 'rgba(255,255,255,0.95)';
+      nav.style.padding = '12px';
+      nav.style.borderRadius = '10px';
+      hamburger.setAttribute('aria-expanded', String(!open));
+    });
+
+    // Basic progressive enhancement: ensure nav visible on wide screens
+    function handleResize(){ if(window.innerWidth > 720){nav.style.display = ''; hamburger.setAttribute('aria-expanded','false')} }
+    window.addEventListener('resize', handleResize);
+  </script>
 </body>
 </html>
