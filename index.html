@@ -144,6 +144,58 @@
     .muted{color:var(--muted)}
     .center{text-align:center}
     .visually-hidden{position:absolute;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    .support-button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  }
+  .close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  .close-button:hover, .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .download-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
   </style>
 </head>
 <body>
@@ -173,6 +225,23 @@
         <a href="#contact" class="cta">Contact Us</a>
       </nav>
     </div>
+    <a href="#" class="support-button" id="remote-support-btn">Get Remote Support</a>
+
+<!-- Modal for instructions -->
+<div id="remote-support-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>How to Get Remote Support</h2>
+    <p>Follow these steps to receive remote assistance:</p>
+    <ol>
+      <li>Click below to download <strong>Google Chrome Remote Desktop</strong>.</li>
+      <li>Open the app once installed and share your access code with us.</li>
+      <li>We’ll connect remotely to help you with your issue.</li>
+    </ol>
+    <p>Click below to download:</p>
+    <a href="https://remotedesktop.google.com/" target="_blank" class="download-btn">Download Chrome Remote Desktop</a>
+  </div>
+</div>
   </header>
 
   <main class="wrap" role="main">
@@ -397,5 +466,21 @@
     function handleResize(){ if(window.innerWidth > 720){nav.style.display = ''; hamburger.setAttribute('aria-expanded','false')} }
     window.addEventListener('resize', handleResize);
   </script>
+  <script>
+  document.getElementById('remote-support-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('remote-support-modal').style.display = 'block';
+  });
+
+  document.querySelector('.close-button').addEventListener('click', function() {
+    document.getElementById('remote-support-modal').style.display = 'none';
+  });
+
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('remote-support-modal')) {
+      document.getElementById('remote-support-modal').style.display = 'none';
+    }
+  };
+</script>
 </body>
 </html>
