@@ -196,6 +196,67 @@
     text-decoration: none;
     border-radius: 5px;
   }
+      /* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section styling */
+.team-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.team-content {
+    margin-bottom: 30px;
+}
+
+/* Heading styling */
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Team member styling */
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    width: 200px;
+}
+
+.team-member img {
+    width: 200px; /* Same size for both images */
+    height: 200px; /* Ensures square aspect ratio */
+    object-fit: cover;
+    border-radius: 50%; /* Rounded edges */
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.title {
+    color: #777;
+    font-size: 1em;
+}
   </style>
 </head>
 <body>
@@ -349,18 +410,26 @@
           <p class="muted" style="margin-top:10px">We work closely with clients to plan migrations, assess security posture, and deliver high-quality web experiences that users love.</p>
         </div>
 
-        <div class="leaders" aria-hidden="false">
-          <div style="text-align:center">
-            <img src="/221.png" alt="Jasmine Williams, CEO">
-            <div style="font-weight:800;margin-top:10px">Jasmine Williams</div>
-            <div class="muted" style="font-size:13px">Chief Executive Officer</div>
-          </div>
-
-          <div style="text-align:center">
-            <img src="/220.png" alt="Darnell Miller, Director">
-            <div style="font-weight:800;margin-top:10px">Darnell Miller</div>
-            <div class="muted" style="font-size:13px">IT Manager · Penetration Tester</div>
-          </div>
+        <section class="team-section">
+        <div class="team-content">
+            <h2>Visionary Leadership</h2>
+            <p>At Pixel Place, we design secure and scalable solutions tailored to your business needs. We combine deep technical expertise with an understanding of business workflows to deliver solutions that improve productivity while reducing risk.</p>
+            <p>We work closely with clients to plan migrations, assess security posture, and deliver high-quality web experiences that users love.</p>
+        </div>
+        
+        <div class="team-members">
+            <div class="team-member">
+                <img src="221.png" alt="Jasmine Williams">
+                <p class="name">Jasmine Williams</p>
+                <p class="title">Chief Executive Officer | Web Infrastructure Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="220.png" alt="Darnell Williams">
+                <p class="name">Darnell Williams</p>
+                <p class="title">IT Security Manager | Penetration Tester</p>
+            </div>
+        </div>
+    </section>
         </div>
       </div>
     </section>
