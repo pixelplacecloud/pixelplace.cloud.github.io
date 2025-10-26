@@ -261,16 +261,23 @@ h2 {
 </head>
 <body>
   <header>
-    <div class="wrap nav-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <!-- fallback logo: keep video if you have it -->
-          <video autoplay muted loop playsinline style="height:56px; width:auto; display:block;">
-            <source src="/logo.mp4" type="video/mp4">
-            <!-- fallback text -->
-            <span style="color:#fff;font-weight:800;">PP</span>
-          </video>
-        </div>
+     <div class="wrap nav-inner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <!-- New PNG logo -->
+        <img src="/logo.png" alt="Pixel Place Logo" style="height:56px; width:auto; display:block; border-radius:12px;">
+      </div>
+      <h3>Pixel Place</h3>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="Menu">☰</button>
+  </div>
+</header>
         <div>
           <h3>Pixel Place</h3>
           <div style="font-size:13px;color:var(--muted)">SharePoint · Penetration Testing · Front-End Websites</div>
